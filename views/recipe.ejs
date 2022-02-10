@@ -2,22 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Food</title>
+    <link rel="stylesheet" href="css/stylee.css">
 </head>
 <body>
 
 
-
+<div class="wrapper">
 
 <%   for(var i=0; i<mealsitem.length;i++) {
 %>
-<div>
+<div class="one">
+
 <h1><%=mealsitem[i].title%></h1>
 
-<a href='<%= mealsitem[i].sourceUrl%>'>'<%= mealsitem[i].sourceUrl%></a>
-<% if(mealsitem[i].id !==""){%>
+
+
 <img src='https://spoonacular.com/recipeImages/<%= mealsitem[i].id %>-240x150.jpg'>
+
+
+ <a href='<%= mealsitem[i].sourceUrl%>'>
+    <button>go to the</button>
+  </a>
+
+</div><%}%>
 </div>
-<%}}%>
 </body>
 </html>
