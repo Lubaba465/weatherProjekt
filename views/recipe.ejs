@@ -5,6 +5,19 @@
     <title>Title</title>
 </head>
 <body>
-<h1><%=temp%></h1>
+
+
+
+
+<%   for(var i=0; i<mealsitem.length;i++) {
+%>
+<div>
+<h1><%=mealsitem[i].title%></h1>
+
+<a href='<%= mealsitem[i].sourceUrl%>'>'<%= mealsitem[i].sourceUrl%></a>
+<% if(mealsitem[i].id !==""){%>
+<img src='https://spoonacular.com/recipeImages/<%= mealsitem[i].id %>-240x150.jpg'>
+</div>
+<%}}%>
 </body>
 </html>

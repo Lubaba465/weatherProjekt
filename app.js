@@ -7,7 +7,7 @@ const app=express();
 app.use(bodyParser.urlencoded({extended:true}));
 app.get("/",function (req,res){
 res.sendFile(__dirname+"/index.html");})
-
+app.set('view engine', 'ejs');
 
 
 
@@ -40,35 +40,22 @@ app.post("/",function (req,res){
 
         response.on("end", function() {
 
-            res.redirect('/')
             const weatherData=JSON.parse(data);
             console.log(weatherData);
             const calories = weatherData.nutrients.calories;
             const protein = weatherData.nutrients.protein;
             const fat = weatherData.nutrients.fat;
             const carbohydrates = weatherData.nutrients.carbohydrates;
-            res.write('<div> <ul><li>'+calories+'</li> <li>'+protein+'</li> <li>'+fat+'</li><li>'+carbohydrates+'</li></ul>  </div>' )
-            for(var i=0; i<weatherData.meals.length;i++) {
-                const temp = weatherData.meals[i].title
-                const sourceUrl = weatherData.meals[i].sourceUrl
-                const id =weatherData.meals[i].id;
 
-
-                const image="https://spoonacular.com/recipeImages/"+id+"-240x150.jpg"
-
-
-                res.render('recipe',{temp:temp});
+                res.render('recipe',{mealsitem:weatherData.meals });
 
 
 
-                res.write( '<h1>'+temp+'</h1>' )
-                res.write("<img src="+image+">")
 
-                res.write( '<a href='+ sourceUrl+'>'+sourceUrl+'</a>' )
 
-            }
 
-            res.send()
+
+
 
 
 
