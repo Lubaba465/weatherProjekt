@@ -1,32 +1,49 @@
 body{
-
-    background: beige;
+background-color: #fefaf6;
 
 }
 .wrapper {
     display: flex;
 }
+.container{
+    display: flex;
+    text-align: center;
+    margin-left: 15%;
+    margin-top: 30px!important;
+}
+p{
+    color: #a78af5;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+margin-left: 30px;
+    text-align: center;
+
+
+}
 .one {
 
 
-    border: 1px solid black;
+    border: 1px solid lightgray;
+box-shadow: 5px 1px 5px 1px lightgray;
     color: white;
-    width: 30%;
-    height: 50%;
-margin-left: 30px;
+    width: 100%;
+    height: 100%;
+margin-right: 30px;
     margin-top: 60px;
+    padding-bottom: 20px;
 }
 img{
-    width: 90%;
-    height: 50%;
-    padding: 10px;
+    width: 100%;
+    height: 60%;
+    margin-left: 0px!important;
 
 
 }
 h1{
     text-align: center;
 
-    background: grey;
+    background: #a78af5;
     margin-bottom: 30px;
     margin-top: 0;
     padding: 20px;
@@ -36,11 +53,52 @@ h1{
 button{
     text-align: left;
     margin-left: 30px;
-    color: grey;
+background-color: darkgrey;
+    display: inline-block;
+    text-decoration: none;
+    padding: 1rem 3rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: 1px solid;
+    border-radius: 0.3rem;
+    color: white;
+    border-color: white;
+    transition: .15s;
+    text-transform: uppercase;
+    max-width: 500px;
+    margin-top: 30px;
 
 
 }
 button:hover{
-    background: gray;
+    background: lightgray;
     color: white;
+}
+
+@media only screen and (max-width: 1000px) {
+    body {
+    }
+    .wrapper {
+        display: flex;
+        flex-direction: column;
+
+    }
+    .one{
+        margin-left: 0px!important;
+    }
+    h1{
+        text-align: center;
+
+
+        padding: 20px;
+        height: 30%;
+    }
+    .container{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-left: 0%;
+        margin-top: 30px!important;
+    }
+
 }

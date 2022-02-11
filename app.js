@@ -1,6 +1,5 @@
 const express= require('express');
 const https=require("https");
-const {response} = require("express");
 const bodyParser=require('body-parser');
 const ejs = require("ejs");
 const app=express();
@@ -17,9 +16,9 @@ app.use(express.static("public"))
 
 
 app.post("/",function (req,res){
-    const q=req.body.cityName;
+    const q=req.body.calorie;
 
-    const apiKey="38193d456123410ea9658c69bc62460c";
+    const apiKey="8e608fc0029c41a78b99622a459851c6";
 
     const ur="https://api.spoonacular.com/mealplanner/generate?diet=vegetarian&timeFrame=day&exclude=greek&targetCalories="+q+"&apiKey="+apiKey+"";
 
@@ -42,14 +41,11 @@ app.post("/",function (req,res){
 
         response.on("end", function() {
 
-            const weatherData=JSON.parse(data);
-            console.log(weatherData);
-            const calories = weatherData.nutrients.calories;
-            const protein = weatherData.nutrients.protein;
-            const fat = weatherData.nutrients.fat;
-            const carbohydrates = weatherData.nutrients.carbohydrates;
+         const Data=JSON.parse(data);
+            console.log(Data);
 
-                res.render('recipe',{mealsitem:weatherData.meals });
+
+                res.render('recipe',{mealsitem:Data.meals,nutrients:Data.nutrients  });
 
 
 
@@ -69,6 +65,6 @@ app.post("/",function (req,res){
 
 })
 
-app.listen(3030, function (){
+app.listen(3000, function (){
         console.log('Server is running on Port 3030')
 })
