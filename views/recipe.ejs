@@ -6,6 +6,15 @@
     <link rel="stylesheet" href="css/stylee.css">
 </head>
 <body>
+
+<form method="post" action="/"><label for="cityInput">calories</label>
+
+<input type="number" name="calorie" id="cityInput">
+    <button type="submit">go</button>
+</form>
+
+
+<% if(q!=null){%>
 <div class="container">
 <p>calories=<%=nutrients.calories%></p>
 <p>protein=<%=nutrients.protein%></p>
@@ -18,19 +27,13 @@
 <%   for(var i=0; i<mealsitem.length;i++) {
 %>
 <div class="one">
-
 <h1><%=mealsitem[i].title%></h1>
-
-
-
 <img src='https://spoonacular.com/recipeImages/<%= mealsitem[i].id %>-240x150.jpg'>
-
-
  <a href='<%= mealsitem[i].sourceUrl%>'>
     <button>go to the Recipe</button>
   </a>
-
 </div><%}%>
 </div>
+<%}%>
 </body>
 </html>
