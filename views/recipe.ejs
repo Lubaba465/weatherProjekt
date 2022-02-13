@@ -6,13 +6,16 @@
     <link rel="stylesheet" href="css/stylee.css">
 </head>
 <body>
+<div class="containe">
+<form method="post" action="/">
 
-<form method="post" action="/"><label for="cityInput">calories</label>
+<label class='caloriename'> calories: </label>
 
 <input type="number" name="calorie" id="cityInput">
-    <button type="submit">go</button>
-</form>
+    <button class="btn" type="submit">submit</button>
 
+</form>
+  </div>
 
 <% if(q!=null){%>
 <div class="container">
